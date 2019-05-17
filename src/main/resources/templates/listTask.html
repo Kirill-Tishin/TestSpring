@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <title>List tasks</title>
+</head>
+<body>
+<div align="center" style="margin: 0 auto">
+    <h1>Menu user</h1><br><br>
+    <form th:action="@{/UserListTask}" method="get">
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Дата</th>
+                <th>Время</th>
+                <th></th>
+            </tr>
+            <tr th:each="task:${listTasks}">
+                <td th:text="${task.nameTask}"></td>
+                <td th:text="${task.descriptiontask}"></td>
+                <td th:text="${task.datetask}"></td>
+                <td th:text="${task.timetask}"></td>
+                <td><input style="size: 5px" type="checkbox" th:id="${task.idTask}" onclick="trueCheckBox(this)"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<br><br>
+<div align="center" style="margin: 0 auto">
+    <form th:action="@{/openAddTask}">
+        <button class="btn" type="submit"><span class="text">Добавить</span></button>
+        <br><br>
+    </form>
+    <form th:action="@{/openChangeTask}">
+        <input type="hidden" id="inputIdTaskChange" name="inputIdTaskChange">
+        <button class="btn"><span class="text">Изменить</span></button>
+        <br><br>
+    </form>
+    <form th:action="@{/deleteTask}" method="post">
+        <input type="hidden" id="inputIdTaskDelete" name="inputIdTaskDelete">
+        <button class="btn"><span class="text">Удалить</span></button>
+        <br><br>
+    </form>
+</div>
+</body>
+
+<script type="text/javascript">
+    function trueCheckBox(checkBox) {
+        if (checkBox.checked === true) {
+            document.getElementById("inputIdTaskDelete").value = checkBox.id;
+            document.getElementById("inputIdTaskChange").value = checkBox.id;
+        }
+    }
+</script>
+
+</html>

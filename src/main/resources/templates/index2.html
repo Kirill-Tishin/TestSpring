@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <title>Main page input</title>
+</head>
+<body>
+<div align="center" style="margin: 0 auto">
+    <h1>Task manager</h1>
+    <!--Test №1-->
+    <!--<form th:action="@{/}" th:object="${userTestPost}" method="post">-->
+    <!--<label for="nameUser">Имя пользователя: </label><input type="text" id="nameUser" th:field="*{nameUser}"><br><br><br>-->
+    <!--<button class="btn" type="submit"><span class="text">Войти</span></button>-->
+    <!--</form>-->
+
+    <!--Test №2-->
+    <!--<form th:action="@{/}" method="post">-->
+    <!--<label for="nameUser1">Имя пользователя: </label><input type="text" id="nameUser1" name="nameUser1"><br><br><br>-->
+    <!--<button class="btn" type="submit"><span class="text">Войти</span></button>-->
+    <!--</form>-->
+
+    <!--WORK-->
+    <form  th:action="@{/}" method="post">
+        <label for="nameUser1">Имя пользователя: </label><input type="text" id="nameUser1" name="nameUser1"><br><br><br>
+        <button class="btn" type="submit"><span class="text">Войти</span></button>
+    </form>
+</div>
+</body>
+</html>

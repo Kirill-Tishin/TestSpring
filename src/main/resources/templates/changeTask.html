@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <title>Add task</title>
+</head>
+<body>
+<div align="center" style="margin: 0 auto">
+    <h1>Menu add task</h1><br>
+    <form th:action="@{/changeTask}" method="post">
+        <label for="titleTask">Введите название задачи: </label><input type="text" name="titleTask"
+                                                                       id="titleTask" th:value="${titleTask}"><br><br>
+        <label for="dateTimeTask">Введите дату исполнения задачи: </label><input type="datetime-local" name="dateTimeTask"
+                                                                             id="dateTimeTask" th:value="${dateTask}"><br><br>
+        <label for="descriptionTask">Введите описание задачи: </label><input type="text" name="descriptionTask"
+                                                                             id="descriptionTask" th:value="${descriptionTask}"><br><br><br>
+        <button class="btn"><span class="text">Изменить</span></button>
+    </form>
+</div>
+</body>
+</html>
